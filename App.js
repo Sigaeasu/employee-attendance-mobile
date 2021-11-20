@@ -9,7 +9,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       {employee === "" && <Login onLogin={setEmployee} />}
-      {employee !== "" && <Attendance onLogout={setEmployee}/>}
+      {employee !== "" && <Attendance onAttend={employee} onLogout={setEmployee}/>}
     </View>
   );
 }

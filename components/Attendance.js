@@ -32,7 +32,7 @@ export default function Attendance(props) {
             data.append('image', fileToUpload);
 
             let res = await fetch(
-                'http://localhost:5000/upload-file',
+                `http://localhost:5000/api/attendances/employee/${props.onAttend}`,
                 {
                     method: 'POST',
                     body: data,
