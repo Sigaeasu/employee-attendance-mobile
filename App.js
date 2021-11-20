@@ -1,12 +1,15 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
+import React, { useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import Login from './components/Login'
+import Attendance from './components/Attendance'
 
 export default function App() {
+  const [employee, setEmployee] = useState("")
+
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      {employee === "" && <Login onLogin={setEmployee} />}
+      {employee !== "" && <Attendance onLogout={setEmployee}/>}
     </View>
   );
 }
@@ -17,5 +20,5 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
-  },
+  }
 });
